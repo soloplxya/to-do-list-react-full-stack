@@ -7,15 +7,19 @@ const path = require("path")
 
 
 // middleware 
-app.use(cors())
-app.use(express.json())
+//middleware
+app.use(cors());
+app.use(express.json()); 
 
-
+// app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static("./client/build")); => for demonstration
 
 if (process.env.NODE_ENV === "production") {
-  app.use(path.join(__dirname, "front_end/public"));
+  //server static content
+  //npm run build
   app.use(express.static(path.join(__dirname, "front-end/build")));
 }
+
 
 
 // ROUTES
