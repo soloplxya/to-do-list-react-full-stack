@@ -9,16 +9,15 @@ const Todo = ({todo, setTodos, todos}) => {
     const [description, setDescription] = useState(todo.description);
 
     const deleteTodo = async id => {
-        try {
-          const deleteTodo = await fetch(`/todoes/${id}`, {
+      try {
+        const deleteTodo = await fetch(`/todoes/${id}`, {
             method: "DELETE"
-          });
-        } catch (err) {
+        });
+      } catch (err) {
           console.error(err.message);
-        } finally {
-            //console.log(todos.todos)
-            setTodos(todos.filter(todo => todo.todo_id !== id));
-        }
+      } finally {
+          setTodos(todos.filter(todo => todo.todo_id !== id));
+      }
     }; 
 
     return (
