@@ -1,39 +1,34 @@
 {
-  "name": "to-do-list-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+  "name": "to-do-list-react-server",
+  "version": "1.0.0",
+  "description": "to do list application ",
+  "main": "server.js",
+  "engines":{
+    "node": "16.13.1",
+    "npm": "8.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server.js", 
+    "heroku-postbuild" : "cd front-end && npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soloplxya/to-do-list-react.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Shaine Goh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soloplxya/to-do-list-react/issues"
+  },
+  "homepage": "https://github.com/soloplxya/to-do-list-react#readme",
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
