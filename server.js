@@ -11,6 +11,13 @@ app.use(cors())
 app.use(express.json())
 
 
+
+if (process.env.NODE_ENV === "production") {
+  app.use(path.join(__dirname, "front_end/public"));
+  app.use(express.static(path.join(__dirname, "front-end/build")));
+}
+
+
 // ROUTES
 app.post("/todoes", async(req, res) => {
     try {
